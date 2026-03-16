@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380">
+  <defs>
+    <clipPath id="frame">
+      <rect width="800" height="380" rx="8" />
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes show0 {
+      0% { opacity: 1; } 33.33% { opacity: 0; } 100% { opacity: 1; }
+    }
+    @keyframes show1 {
+      0% { opacity: 0; } 33.33% { opacity: 1; } 66.66% { opacity: 0; } 100% { opacity: 0; }
+    }
+    @keyframes show2 {
+      0% { opacity: 0; } 66.66% { opacity: 1; } 100% { opacity: 0; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+
+    .w0 { animation: show0 15s step-end infinite; }
+    .w1 { animation: show1 15s step-end infinite; }
+    .w2 { animation: show2 15s step-end infinite; }
+    .blink { animation: blink 1s step-end infinite; }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+
+    text {
+      font-family: 'SF Mono', 'Cascadia Code', 'Consolas', 'DejaVu Sans Mono', monospace;
+      font-size: 13px;
+    }
+    .t  { fill: #edf4f8; }
+    .tm { fill: #8bb8cc; }
+    .ta { fill: #8ecae6; }
+    .to { fill: #fb8500; }
+    .tg { fill: #4ade80; }
+    .tb { font-weight: 700; }
+    .ts { font-size: 12px; }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <!-- background -->
+    <rect width="800" height="380" fill="#011e30" />
+
+    <!-- title bar -->
+    <rect width="800" height="32" fill="#023047" />
+    <circle cx="20" cy="16" r="5" fill="#ff5f57" opacity="0.8" />
+    <circle cx="38" cy="16" r="5" fill="#ffbd2e" opacity="0.8" />
+    <circle cx="56" cy="16" r="5" fill="#28c840" opacity="0.8" />
+    <text x="400" y="20" text-anchor="middle" class="tm ts">mello — tmux</text>
+
+    <!-- ═══ window 0: neofetch ═══ -->
+    <g class="w0">
+      <text x="20" y="58">
+        <tspan class="tg">mello@github</tspan><tspan class="tm">:</tspan><tspan class="ta">~</tspan><tspan class="t"> $ neofetch</tspan>
+      </text>
+
+      <!-- ASCII M logo -->
+      <text x="36" y="94"  class="ta">██    ██</text>
+      <text x="36" y="112" class="ta">███  ███</text>
+      <text x="36" y="130" class="ta">█ ████ █</text>
+      <text x="36" y="148" class="ta">█  ██  █</text>
+      <text x="36" y="166" class="ta">█      █</text>
+      <text x="36" y="184" class="ta">█      █</text>
+
+      <!-- info -->
+      <text x="200" y="94">
+        <tspan class="ta tb">mello</tspan><tspan class="tm">@</tspan><tspan class="ta tb">github</tspan>
+      </text>
+      <text x="200" y="112" class="tm">──────────────────</text>
+      <text x="200" y="130">
+        <tspan class="to">role</tspan><tspan class="tm"> ~ </tspan><tspan class="t">full stack engineer</tspan>
+      </text>
+      <text x="200" y="148">
+        <tspan class="to">os</tspan><tspan class="tm"> ~ </tspan><tspan class="t">são paulo, br</tspan>
+      </text>
+      <text x="200" y="166">
+        <tspan class="to">shell</tspan><tspan class="tm"> ~ </tspan><tspan class="t">rust · node.js · lua</tspan>
+      </text>
+      <text x="200" y="184">
+        <tspan class="to">editor</tspan><tspan class="tm"> ~ </tspan><tspan class="t">emacs</tspan>
+      </text>
+      <text x="200" y="202">
+        <tspan class="to">wm</tspan><tspan class="tm"> ~ </tspan><tspan class="t">tmux</tspan>
+      </text>
+      <text x="200" y="220">
+        <tspan class="to">uptime</tspan><tspan class="tm"> ~ </tspan><tspan class="t">since 2018</tspan>
+      </text>
+
+      <!-- color palette blocks -->
+      <text x="200" y="250" font-size="10">
+        <tspan fill="#2e3440">███</tspan><tspan fill="#bf616a">███</tspan><tspan fill="#a3be8c">███</tspan><tspan fill="#ebcb8b">███</tspan><tspan fill="#81a1c1">███</tspan><tspan fill="#b48ead">███</tspan><tspan fill="#88c0d0">███</tspan><tspan fill="#e5e9f0">███</tspan>
+      </text>
+      <text x="200" y="264" font-size="10">
+        <tspan fill="#4c566a">███</tspan><tspan fill="#d08770">███</tspan><tspan fill="#8fbcbb">███</tspan><tspan fill="#d8dee9">███</tspan><tspan fill="#5e81ac">███</tspan><tspan fill="#9b6da0">███</tspan><tspan fill="#6eb5c2">███</tspan><tspan fill="#eceff4">███</tspan>
+      </text>
+    </g>
+
+    <!-- ═══ window 1: broll ═══ -->
+    <g class="w1">
+      <text x="20" y="58">
+        <tspan class="tg">mello@dev</tspan><tspan class="tm">:</tspan><tspan class="ta">~/broll</tspan><tspan class="t"> $ cargo run -- record</tspan>
+      </text>
+
+      <text x="36" y="90"  class="tm">   Compiling broll v0.1.0</text>
+      <text x="36" y="108" class="tg">    Finished release [optimized]</text>
+      <text x="36" y="126" class="tg">     Running `target/release/broll record`</text>
+
+      <text x="36" y="160">
+        <tspan class="to tb">  broll</tspan><tspan class="tm"> — terminal session recorder</tspan>
+      </text>
+
+      <!-- pulsing recording dot -->
+      <circle cx="50" cy="186" r="4" fill="#fb8500" class="pulse" />
+      <text x="60" y="190" class="t">recording session...</text>
+
+      <text x="50" y="220">
+        <tspan class="tm">  pty capture     </tspan><tspan class="tg">active</tspan>
+      </text>
+      <text x="50" y="238">
+        <tspan class="tm">  redaction       </tspan><tspan class="tg">on</tspan>
+      </text>
+      <text x="50" y="256">
+        <tspan class="tm">  storage         </tspan><tspan class="t">sqlite + fts</tspan>
+      </text>
+      <text x="50" y="274">
+        <tspan class="tm">  format          </tspan><tspan class="t">searchable pty</tspan>
+      </text>
+
+      <text x="36" y="308">
+        <tspan class="tm">  press </tspan><tspan class="to">ctrl+d</tspan><tspan class="tm"> to stop</tspan>
+      </text>
+    </g>
+
+    <!-- ═══ window 2: links ═══ -->
+    <g class="w2">
+      <text x="20" y="58">
+        <tspan class="tg">mello@dev</tspan><tspan class="tm">:</tspan><tspan class="ta">~</tspan><tspan class="t"> $ cat links.md</tspan>
+      </text>
+
+      <text x="36" y="92" class="to tb">  ## links</text>
+
+      <text x="36" y="122">
+        <tspan class="tm">  ├── </tspan><tspan class="ta">linkedin       </tspan><tspan class="t">in/rdemellob</tspan>
+      </text>
+      <text x="36" y="144">
+        <tspan class="tm">  ├── </tspan><tspan class="ta">codewars       </tspan><tspan class="t">mellozin</tspan>
+      </text>
+      <text x="36" y="166">
+        <tspan class="tm">  ├── </tspan><tspan class="ta">steam          </tspan><tspan class="t">rb25</tspan>
+      </text>
+      <text x="36" y="188">
+        <tspan class="tm">  └── </tspan><tspan class="ta">retroach       </tspan><tspan class="t">mellorb1</tspan>
+      </text>
+
+      <text x="36" y="226" class="to tb">  ## interests</text>
+
+      <text x="36" y="256"><tspan class="tm">  ▸ </tspan><tspan class="t">cars</tspan></text>
+      <text x="36" y="276"><tspan class="tm">  ▸ </tspan><tspan class="t">retro gaming</tspan></text>
+      <text x="36" y="296"><tspan class="tm">  ▸ </tspan><tspan class="t">system crafting</tspan></text>
+      <text x="36" y="316"><tspan class="tm">  ▸ </tspan><tspan class="t">lisps</tspan></text>
+    </g>
+
+    <!-- ═══ tmux status bar ═══ -->
+    <rect y="354" width="800" height="26" fill="#00aa00" />
+
+    <!-- status: window 0 active -->
+    <g class="w0">
+      <rect x="5" y="358" width="100" height="18" rx="2" fill="#005500" />
+      <text x="10" y="371" font-size="11" fill="#ffffff" font-weight="700">0:neofetch*</text>
+      <text x="112" y="371" font-size="11" fill="#003300">1:broll  2:links</text>
+    </g>
+    <!-- status: window 1 active -->
+    <g class="w1">
+      <text x="10" y="371" font-size="11" fill="#003300">0:neofetch  </text>
+      <rect x="110" y="358" width="68" height="18" rx="2" fill="#005500" />
+      <text x="115" y="371" font-size="11" fill="#ffffff" font-weight="700">1:broll*</text>
+      <text x="185" y="371" font-size="11" fill="#003300">2:links</text>
+    </g>
+    <!-- status: window 2 active -->
+    <g class="w2">
+      <text x="10" y="371" font-size="11" fill="#003300">0:neofetch  1:broll  </text>
+      <rect x="195" y="358" width="68" height="18" rx="2" fill="#005500" />
+      <text x="200" y="371" font-size="11" fill="#ffffff" font-weight="700">2:links*</text>
+    </g>
+
+    <!-- right side of status bar (always visible) -->
+    <text x="630" y="371" font-size="11" fill="#003300">"mello@dev"</text>
+    <text x="740" y="371" font-size="11" fill="#003300">12:00</text>
+  </g>
+
+  <!-- border -->
+  <rect width="800" height="380" rx="8" fill="none" stroke="#1a5068" stroke-width="1.5" />
+</svg>
