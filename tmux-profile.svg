@@ -58,13 +58,13 @@
         <tspan class="tg">mello@github</tspan><tspan class="tm">:</tspan><tspan class="ta">~</tspan><tspan class="t"> $ neofetch</tspan>
       </text>
 
-      <!-- ASCII M logo -->
-      <text x="36" y="94"  class="ta">██    ██</text>
-      <text x="36" y="112" class="ta">███  ███</text>
-      <text x="36" y="130" class="ta">█ ████ █</text>
-      <text x="36" y="148" class="ta">█  ██  █</text>
-      <text x="36" y="166" class="ta">█      █</text>
-      <text x="36" y="184" class="ta">█      █</text>
+      <!-- emacs logo (lisp parens) -->
+      <text x="36" y="94"  class="ta">  (        )</text>
+      <text x="36" y="112" class="ta">  ((      ))</text>
+      <text x="36" y="130"><tspan class="ta">  ((</tspan><tspan class="to">.emacs</tspan><tspan class="ta">))</tspan></text>
+      <text x="36" y="148"><tspan class="ta">  ((  </tspan><tspan class="tm">;;</tspan><tspan class="ta">  ))</tspan></text>
+      <text x="36" y="166" class="ta">  ((      ))</text>
+      <text x="36" y="184" class="ta">  (        )</text>
 
       <!-- info -->
       <text x="200" y="94">
