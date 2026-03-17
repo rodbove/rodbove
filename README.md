@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://linkedin.com/in/rdemellob">linkedin</a> ·
-  <a href="https://www.codewars.com/users/mellozin">codewars</a> ·
+  <a href="https://www.codewars.com/users/mellozin"><img src="https://www.codewars.com/users/mellozin/badges/large" alt="codewars badge" /></a> ·
   <a href="https://steamcommunity.com/id/poowoo/">steam</a> ·
   <a href="https://retroachievements.org/user/mellorb1">retroachievements</a>
 </p>
