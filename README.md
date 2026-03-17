@@ -10,9 +10,14 @@
 
 <br/>
 
+<div align="center">
+  <a href="https://www.codewars.com/users/mellozin"><img src="https://www.codewars.com/users/mellozin/badges/large" alt="codewars badge" /></a>
+</div>
+
 <p align="center">
-  <a href="https://linkedin.com/in/rdemellob">linkedin</a> ·
-  <a href="https://www.codewars.com/users/mellozin"><img src="https://www.codewars.com/users/mellozin/badges/large" alt="codewars badge" /></a> ·
-  <a href="https://steamcommunity.com/id/poowoo/">steam</a> ·
-  <a href="https://retroachievements.org/user/mellorb1">retroachievements</a>
+  <a href="https://linkedin.com/in/rdemellob"><img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/xbu/linkedin-revised-brand-guidelines/downloads/fg/brandg-business-in-logo-dsk-v03.png/jcr:content/renditions/brandg-business-in-logo-dsk-v03-2x.png" alt="linkedin" height="30" /></a>
+  &nbsp;&nbsp;
+  <a href="https://steamcommunity.com/id/poowoo/"><img src="https://community.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="steam" height="30" /></a>
+  &nbsp;&nbsp;
+  <a href="https://retroachievements.org/user/mellorb1"><img src="https://static.retroachievements.org/assets/images/ra-icon.webp" alt="retroachievements" height="30" /></a>
 </p>
