@@ -3,7 +3,7 @@ import math
 import os
 import sys
 import urllib.request
-from datetime import date, timedelta
+from datetime import date
 
 USER = "rodbove"
 QUERY = """
@@ -32,16 +32,16 @@ query($login: String!) {
 }
 """
 
-W, H = 800, 330
+W, H = 800, 250
 BODY, SIDE, EDGE = "#9d9e99", "#6c6d69", "#7a7b76"
 INK, DIM_INK = "#1c1c1c", "#454642"
 SCREEN, S_INK, S_DIM, S_FAINT = "#0d0e0f", "#eceae4", "#6a6b6c", "#222325"
 ORANGE, BLUE, GREEN, WHITE = "#ff5b14", "#2f6bd8", "#2fa35a", "#f4f3ef"
-PAD, PAD_OFF, PAD_SH, KEY, GRILLE = "#dddd d7".replace(" ", ""), "#c4c4be", "#5e5f5b", "#2a2a2a", "#555652"
+KEY, KEY_SH, PAD_SH = "#2a2a2a", "#0f0f0f", "#5e5f5b"
 LEVELS = ["#ffd2bd", "#ffa070", "#ff7a3d", ORANGE]
-KNOB_COLORS = [BLUE, GREEN, WHITE, ORANGE]
-SWEEP = 8.0
-SHORT = {"typescript": "ts", "javascript": "js", "kotlin": "kt", "vim script": "vim", "shell": "sh", "python": "py", "dockerfile": "dock"}
+OCTAVES = 3
+BLACK = {1, 3, 6, 8, 10}
+CYCLE = 9.0
 
 
 def fetch():
@@ -92,113 +92,103 @@ def level(n, peak):
 
 def render(data):
     user = data["data"]["user"]
-    cc = user["contributionsCollection"]
-    cal = cc["contributionCalendar"]
-    weeks = cal["weeks"][-52:]
+    cal = user["contributionsCollection"]["contributionCalendar"]
     days = [d for w in cal["weeks"] for d in w["contributionDays"]]
     current, best = streaks(days)
-    langs = languages(user["repositories"]["nodes"])
-    stars = sum(r["stargazerCount"] for r in user["repositories"]["nodes"])
-    peak = sorted(d["contributionCount"] for w in weeks for d in w["contributionDays"])
-    peak = peak[int(len(peak) * 0.95)] if peak else 1
+    langs = languages(user["repositories"]["nodes"], 1)
+    preset = langs[0][0].upper() if langs else "INIT"
+    notes = 12 * OCTAVES
+    weeks = [sum(d["contributionCount"] for d in w["contributionDays"]) for w in cal["weeks"]][-notes:]
+    weeks = [0] * (notes - len(weeks)) + weeks
+    ranked = sorted(weeks)
+    peak = ranked[int(len(ranked) * 0.9)] or 1
     out = []
     a = out.append
     a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
     a("<style>")
     a('text { font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mono", monospace; }')
     a(f".i {{ fill: {S_INK}; }} .d {{ fill: {S_DIM}; }} .o {{ fill: {ORANGE}; }} .b {{ font-weight: 700; }}")
-    a(f".lbl {{ fill: {DIM_INK}; font-size: 9px; letter-spacing: 1px; }}")
+    a(f".lbl {{ fill: {DIM_INK}; font-size: 8px; letter-spacing: 1px; }}")
     a("@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }")
     a(".blink { animation: blink 1s step-end infinite; }")
-    a(f"@keyframes sweep {{ 0% {{ transform: translateX(0px); }} 100% {{ transform: translateX({52 * 13}px); }} }}")
-    a(f".sweep {{ animation: sweep {SWEEP}s linear infinite; }}")
+    a("@keyframes press { 0% { opacity: 0.55; } 6% { opacity: 0; } 100% { opacity: 0; } }")
+    a(f".press {{ opacity: 0; animation: press {CYCLE}s linear infinite; }}")
+    a("@keyframes wheel { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }")
+    a(".wheel { animation: wheel 4s ease-in-out infinite; }")
     a("</style>")
     a("<defs>")
     a(f'<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9aaa5"/><stop offset="1" stop-color="{BODY}"/></linearGradient>')
-    a('<radialGradient id="knob" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="1" stop-color="#000000" stop-opacity="0.15"/></radialGradient>')
     a('<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/></linearGradient>')
-    a('<linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.45"/></linearGradient>')
-    a('<clipPath id="grid"><rect x="58" y="196" width="680" height="94"/></clipPath>')
+    a('<linearGradient id="ivory" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e4e3de"/><stop offset="0.15" stop-color="#f4f3ef"/><stop offset="1" stop-color="#ffffff"/></linearGradient>')
+    a('<linearGradient id="ebony" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1a1a"/><stop offset="1" stop-color="#3a3a3a"/></linearGradient>')
+    a('<linearGradient id="roll" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a1a1a"/><stop offset="0.5" stop-color="#4a4a4a"/><stop offset="1" stop-color="#1a1a1a"/></linearGradient>')
     a("</defs>")
 
-    a(f'<rect x="4" y="10" width="{W - 8}" height="{H - 12}" rx="22" fill="{SIDE}"/>')
-    a(f'<rect x="4" y="4" width="{W - 8}" height="{H - 14}" rx="22" fill="url(#body)" stroke="{EDGE}" stroke-width="1.5"/>')
-    for x, y in [(22, 22), (W - 22, 22), (22, H - 28), (W - 22, H - 28)]:
+    a(f'<rect x="4" y="10" width="{W - 8}" height="{H - 12}" rx="20" fill="{SIDE}"/>')
+    a(f'<rect x="4" y="4" width="{W - 8}" height="{H - 14}" rx="20" fill="url(#body)" stroke="{EDGE}" stroke-width="1.5"/>')
+    for x, y in [(20, 20), (W - 20, 20)]:
         a(f'<circle cx="{x}" cy="{y}" r="4" fill="{EDGE}"/><path d="M{x - 2.5} {y} h5" stroke="{DIM_INK}" stroke-width="1"/>')
 
-    sx, sy, sw, sh = 40, 34, 250, 118
-    a(f'<rect x="{sx - 8}" y="{sy - 8}" width="{sw + 16}" height="{sh + 16}" rx="10" fill="{KEY}"/>')
-    a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="5" fill="{SCREEN}"/>')
-    a(f'<text x="{sx + 12}" y="{sy + 18}" font-size="10" class="o b">CONTRIB</text>')
-    a(f'<text x="{sx + sw - 12}" y="{sy + 18}" font-size="10" text-anchor="end" class="d">LAST 12 MONTHS</text>')
-    a(f'<text x="{sx + 12}" y="{sy + 58}" font-size="38" class="i b">{cal["totalContributions"]}</text>')
-    a(f'<path d="M{sx + 10} {sy + 72} H{sx + sw - 10}" stroke="{S_FAINT}"/>')
-    cells = [("STREAK", f"{current}d"), ("BEST", f"{best}d"), ("STARS", str(stars))]
-    for k, (key, val) in enumerate(cells):
-        x = sx + 12 + k * 80
-        a(f'<text x="{x}" y="{sy + 90}" font-size="9" class="d">{key}</text>')
-        a(f'<text x="{x}" y="{sy + 108}" font-size="15" class="i b">{val}</text>')
-    a(f'<text x="{sx + sw - 12}" y="{sy + 108}" font-size="15" class="o blink">_</text>')
-    a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="5" fill="url(#glass)"/>')
+    sx, sy, sw, sh = 150, 26, 300, 56
+    a(f'<rect x="{sx - 7}" y="{sy - 7}" width="{sw + 14}" height="{sh + 14}" rx="9" fill="{KEY}"/>')
+    a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="4" fill="{SCREEN}"/>')
+    a(f'<text x="{sx + 12}" y="{sy + 18}" font-size="9" class="o b">PRESET {preset}</text>')
+    a(f'<text x="{sx + sw - 12}" y="{sy + 18}" font-size="9" text-anchor="end" class="d">STREAK {current}D  BEST {best}D</text>')
+    a(f'<text x="{sx + 12}" y="{sy + 45}" font-size="22" class="i b">{cal["totalContributions"]}</text>')
+    a(f'<text x="{sx + 12 + len(str(cal["totalContributions"])) * 14 + 6}" y="{sy + 45}" font-size="10" class="d">contributions in the last year<tspan class="o blink"> _</tspan></text>')
+    a(f'<rect x="{sx}" y="{sy}" width="{sw}" height="{sh}" rx="4" fill="url(#glass)"/>')
 
-    knobs = [
-        ("COMMITS", cc["totalCommitContributions"], 400),
-        ("PRS", cc["totalPullRequestContributions"], 50),
-        ("ISSUES", cc["totalIssueContributions"], 50),
-        ("REPOS", user["repositories"]["totalCount"], 60),
-    ]
-    for k, (name, value, full) in enumerate(knobs):
-        cx, cy = 345 + k * 62, 72
-        c = KNOB_COLORS[k]
-        ang = -135 + 270 * min(1.0, value / full)
-        for t in range(11):
-            ta = math.radians(-225 + 27 * t)
-            a(f'<path d="M{cx + 24 * math.cos(ta):.1f} {cy + 24 * math.sin(ta):.1f} L{cx + 27 * math.cos(ta):.1f} {cy + 27 * math.sin(ta):.1f}" stroke="{DIM_INK}" stroke-width="1"/>')
-        a(f'<circle cx="{cx}" cy="{cy + 2}" r="19" fill="{PAD_SH}"/>')
-        a(f'<circle cx="{cx}" cy="{cy}" r="19" fill="{c}"/>')
-        a(f'<circle cx="{cx}" cy="{cy}" r="19" fill="url(#knob)"/>')
-        a(f'<g transform="rotate({ang:.1f} {cx} {cy})"><rect x="{cx - 1.5}" y="{cy - 17}" width="3" height="9" rx="1.5" fill="{INK if c == WHITE else WHITE}"/></g>')
-        a(f'<text x="{cx}" y="{cy + 42}" text-anchor="middle" class="lbl">{name}</text>')
-        a(f'<text x="{cx}" y="{cy + 56}" text-anchor="middle" font-size="11" fill="{INK}" class="b">{value}</text>')
+    a(f'<text x="480" y="46" font-size="20" fill="{INK}" class="b">mello</text>')
+    a(f'<text x="480" y="62" class="lbl">KEYS-{notes}  ·  ONE KEY PER WEEK</text>')
+    for k, (c, name) in enumerate([(ORANGE, "REC"), (GREEN, "PLAY"), (KEY, "OCT")]):
+        x = 680 + k * 34
+        a(f'<rect x="{x}" y="{31 + 3}" width="26" height="22" rx="5" fill="{KEY_SH}"/>')
+        a(f'<rect x="{x}" y="31" width="26" height="22" rx="5" fill="{KEY}"/>')
+        if name == "REC":
+            a(f'<circle cx="{x + 13}" cy="42" r="4.5" fill="{c}"/>')
+        elif name == "PLAY":
+            a(f'<path d="M{x + 10} 36 l8 6 l-8 6 z" fill="{c}"/>')
+        else:
+            a(f'<text x="{x + 13}" y="45" font-size="9" text-anchor="middle" fill="#e6e4de">+/-</text>')
+        a(f'<text x="{x + 13}" y="68" text-anchor="middle" class="lbl" font-size="7">{name}</text>')
 
-    fx0, fy, fh = 600, 36, 100
-    for k, (name, share) in enumerate(langs):
-        x = fx0 + k * 30
-        a(f'<rect x="{x - 2}" y="{fy}" width="4" height="{fh}" rx="2" fill="{KEY}"/>')
-        for t in range(6):
-            a(f'<path d="M{x - 9} {fy + t * fh / 5:.1f} h4" stroke="{DIM_INK}" stroke-width="0.8"/>')
-        cap = fy + fh - fh * min(1.0, share / max(langs[0][1], 0.01))
-        a(f'<rect x="{x - 9}" y="{cap - 6 + 2:.1f}" width="18" height="12" rx="2" fill="{PAD_SH}"/>')
-        a(f'<rect x="{x - 9}" y="{cap - 6:.1f}" width="18" height="12" rx="2" fill="{KNOB_COLORS[k % 4]}"/>')
-        a(f'<path d="M{x - 7} {cap:.1f} h14" stroke="{INK if k % 4 == 2 else WHITE}" stroke-width="1.2"/>')
-        label = SHORT.get(name.lower(), name.lower()[:4])
-        a(f'<text x="{x}" y="{fy + fh + 18}" text-anchor="middle" font-size="8" fill="{DIM_INK}">{label}</text>')
-        a(f'<text x="{x}" y="{fy + fh + 30}" text-anchor="middle" font-size="9" fill="{INK}" class="b">{share * 100:.0f}%</text>')
+    for k, name in enumerate(["PITCH", "MOD"]):
+        x = 36 + k * 46
+        a(f'<rect x="{x}" y="104" width="28" height="110" rx="6" fill="{KEY_SH}"/>')
+        a(f'<rect x="{x + 5}" y="110" width="18" height="98" rx="4" fill="url(#roll)"/>')
+        cls = ' class="wheel"' if k == 1 else ""
+        a(f'<g{cls}><rect x="{x + 5}" y="{153 if k == 0 else 175}" width="18" height="6" rx="1" fill="{ORANGE if k == 1 else "#8a8a86"}"/></g>')
+        a(f'<text x="{x + 14}" y="230" text-anchor="middle" class="lbl" font-size="7">{name}</text>')
 
-    gx, gy, cell, gap = 62, 200, 11, 2
-    last_month = None
-    for wi, week in enumerate(weeks):
-        x = gx + wi * (cell + gap)
-        first = week["contributionDays"][0]["date"]
-        month = first[5:7]
-        if month != last_month and wi < 51:
-            name = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"][int(month) - 1]
-            a(f'<text x="{x}" y="{gy - 6}" class="lbl" font-size="8">{name}</text>')
-            last_month = month
-        for d in week["contributionDays"]:
-            wd = (date.fromisoformat(d["date"]).weekday() + 1) % 7
-            y = gy + wd * (cell + gap)
-            fill = level(d["contributionCount"], peak) or PAD_OFF
-            a(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.5" fill="{fill}"><title>{d["date"]}: {d["contributionCount"]}</title></rect>')
-    for wd, name in [(1, "MON"), (3, "WED"), (5, "FRI")]:
-        a(f'<text x="{gx - 6}" y="{gy + wd * (cell + gap) + 9}" text-anchor="end" class="lbl" font-size="7">{name}</text>')
-    a(f'<g clip-path="url(#grid)"><g class="sweep"><rect x="{gx - 30}" y="{gy - 2}" width="30" height="{7 * (cell + gap) + 2}" fill="url(#beam)"/></g></g>')
-    lx = gx + 52 * (cell + gap) - 120
-    a(f'<text x="{lx - 6}" y="{gy + 7 * (cell + gap) + 16}" text-anchor="end" class="lbl" font-size="8">LESS</text>')
-    for k, c in enumerate([PAD_OFF] + LEVELS):
-        a(f'<rect x="{lx + k * 14}" y="{gy + 7 * (cell + gap) + 8}" width="{cell}" height="{cell}" rx="2.5" fill="{c}"/>')
-    a(f'<text x="{lx + 5 * 14 + 4}" y="{gy + 7 * (cell + gap) + 16}" class="lbl" font-size="8">MORE</text>')
-    a(f'<text x="{gx}" y="{gy + 7 * (cell + gap) + 16}" class="lbl" font-size="8">UPDATED {date.today().isoformat()}</text>')
+    kx, ky, kw = 140, 96, 646
+    whites = [i for i in range(notes) if i % 12 not in BLACK]
+    ww = kw / len(whites)
+    wh, bh, bw = 132, 82, ww * 0.6
+    a(f'<rect x="{kx - 6}" y="{ky - 6}" width="{kw + 12}" height="{wh + 12}" rx="6" fill="{KEY_SH}"/>')
+    pos = {}
+    for n, i in enumerate(whites):
+        pos[i] = kx + n * ww
+    for i in range(notes):
+        if i % 12 in BLACK:
+            pos[i] = pos[i - 1] + ww - bw / 2
+
+    def key(i, x, w, h, base):
+        count = weeks[i]
+        lit = level(count, peak)
+        a(f'<rect x="{x:.1f}" y="{ky}" width="{w:.1f}" height="{h}" rx="3" fill="{base}"><title>{count} contributions</title></rect>')
+        if lit:
+            inset = 3 if base == "url(#ebony)" else 0
+            a(f'<rect x="{x + inset:.1f}" y="{ky + h * 0.55:.1f}" width="{w - 2 * inset:.1f}" height="{h * 0.45 - 3:.1f}" rx="3" fill="{lit}"/>')
+        delay = i / notes * CYCLE
+        a(f'<rect class="press" style="animation-delay: {delay:.2f}s" x="{x:.1f}" y="{ky}" width="{w:.1f}" height="{h}" rx="3" fill="{ORANGE}"/>')
+
+    for i in whites:
+        key(i, pos[i] + 1, ww - 2, wh, "url(#ivory)")
+    for i in range(notes):
+        if i % 12 in BLACK:
+            a(f'<rect x="{pos[i]:.1f}" y="{ky}" width="{bw:.1f}" height="{bh + 3}" rx="3" fill="{KEY_SH}"/>')
+            key(i, pos[i], bw, bh, "url(#ebony)")
+    a(f'<rect x="{kx}" y="{ky - 1}" width="{kw}" height="4" fill="#c81e0a" opacity="0.8"/>')
     a("</svg>")
     return "\n".join(out)
 
