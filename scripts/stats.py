@@ -19,7 +19,7 @@ query($login: String!) {
         weeks { contributionDays { date contributionCount } }
       }
     }
-    repositories(ownerAffiliations: OWNER, isFork: false, first: 100, privacy: PUBLIC) {
+    repositories(ownerAffiliations: OWNER, isFork: false, first: 100) {
       totalCount
       nodes {
         stargazerCount
