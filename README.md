@@ -5,12 +5,7 @@
 <br/>
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=rodbove&show_icons=true&include_all_commits=true&count_private=true&bg_color=0d0e0f&title_color=ff5b14&text_color=eceae4&icon_color=2f6bd8&border_color=6c6d69&border_radius=8" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rodbove&layout=compact&langs_count=6&bg_color=0d0e0f&title_color=ff5b14&text_color=eceae4&icon_color=2f6bd8&border_color=6c6d69&border_radius=8" />
-</div>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=rodbove&background=0d0e0f&ring=ff5b14&fire=ff5b14&currStreakNum=eceae4&currStreakLabel=ff5b14&sideNums=eceae4&sideLabels=6a6b6c&dates=6a6b6c&stroke=222325&border=6c6d69&border_radius=8" />
+  <img src="stats.svg" alt="mello's stats" width="800" />
 </div>
 
 <br/>
