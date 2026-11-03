@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
 jobs:
   render:
     runs-on: ubuntu-latest
@@ -25,4 +29,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add stats.svg
-          git diff --cached --quiet || (git commit -m "chore: update stats" && git push)
+          git diff --cached --quiet || (git commit -m "chore: update stats" && git pull --rebase && git push)
