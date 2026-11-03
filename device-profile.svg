@@ -1,0 +1,365 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="390" viewBox="0 0 800 390">
+<style>
+@keyframes pg0 { 0% { opacity: 1; } 33.333% { opacity: 0; } 100% { opacity: 0; } }
+.pg0 { animation: pg0 18.0s step-end infinite; }
+@keyframes pg1 { 0% { opacity: 0; } 33.333% { opacity: 1; } 66.667% { opacity: 0; } 100% { opacity: 0; } }
+.pg1 { animation: pg1 18.0s step-end infinite; }
+@keyframes pg2 { 0% { opacity: 0; } 66.667% { opacity: 1; } 100.000% { opacity: 0; } 100% { opacity: 0; } }
+.pg2 { animation: pg2 18.0s step-end infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.blink { animation: blink 1s step-end infinite; }
+@keyframes head { 0.000% { transform: translateX(0px); } 6.250% { transform: translateX(15px); } 12.500% { transform: translateX(30px); } 18.750% { transform: translateX(45px); } 25.000% { transform: translateX(60px); } 31.250% { transform: translateX(75px); } 37.500% { transform: translateX(90px); } 43.750% { transform: translateX(105px); } 50.000% { transform: translateX(120px); } 56.250% { transform: translateX(135px); } 62.500% { transform: translateX(150px); } 68.750% { transform: translateX(165px); } 75.000% { transform: translateX(180px); } 81.250% { transform: translateX(195px); } 87.500% { transform: translateX(210px); } 93.750% { transform: translateX(225px); } 100% { transform: translateX(0px); } }
+.head { animation: head 2.0s step-end infinite; }
+text { font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mono", monospace; }
+.i { fill: #eceae4; } .d { fill: #6a6b6c; } .o { fill: #ff5b14; } .b { font-weight: 700; }
+.lbl { fill: #454642; font-size: 9px; letter-spacing: 1px; }
+</style>
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9aaa5"/><stop offset="1" stop-color="#9d9e99"/></linearGradient>
+<radialGradient id="knob" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/><stop offset="1" stop-color="#000000" stop-opacity="0.15"/></radialGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.07"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+</defs>
+<rect x="4" y="10" width="792" height="378" rx="22" fill="#6c6d69"/>
+<rect x="4" y="4" width="792" height="376" rx="22" fill="url(#body)" stroke="#7a7b76" stroke-width="1.5"/>
+<circle cx="22" cy="22" r="4" fill="#7a7b76"/><path d="M19.5 22 h5" stroke="#454642" stroke-width="1"/>
+<circle cx="778" cy="22" r="4" fill="#7a7b76"/><path d="M775.5 22 h5" stroke="#454642" stroke-width="1"/>
+<circle cx="22" cy="362" r="4" fill="#7a7b76"/><path d="M19.5 362 h5" stroke="#454642" stroke-width="1"/>
+<circle cx="778" cy="362" r="4" fill="#7a7b76"/><path d="M775.5 362 h5" stroke="#454642" stroke-width="1"/>
+<rect x="30" y="30" width="490" height="282" rx="12" fill="#2a2a2a"/>
+<rect x="40" y="40" width="470" height="262" rx="6" fill="#0d0e0f"/>
+<text x="52" y="58" font-size="11" class="o b">PLAY</text>
+<text x="90" y="58" font-size="11" class="i">120.0 BPM  SW 0%  A01</text>
+<g class="pg0"><rect x="340" y="46" width="50" height="16" rx="3" fill="#eceae4"/></g>
+<text x="365" y="58" font-size="10" text-anchor="middle" fill="#6a6b6c">WHO</text>
+<g class="pg0"><text x="365" y="58" font-size="10" text-anchor="middle" fill="#0d0e0f">WHO</text></g>
+<g class="pg1"><rect x="396" y="46" width="50" height="16" rx="3" fill="#eceae4"/></g>
+<text x="421" y="58" font-size="10" text-anchor="middle" fill="#6a6b6c">BUILDS</text>
+<g class="pg1"><text x="421" y="58" font-size="10" text-anchor="middle" fill="#0d0e0f">BUILDS</text></g>
+<g class="pg2"><rect x="452" y="46" width="50" height="16" rx="3" fill="#eceae4"/></g>
+<text x="477" y="58" font-size="10" text-anchor="middle" fill="#6a6b6c">LINKS</text>
+<g class="pg2"><text x="477" y="58" font-size="10" text-anchor="middle" fill="#0d0e0f">LINKS</text></g>
+<path d="M50 66 H500" stroke="#222325" stroke-width="1"/>
+<g class="pg0">
+<text x="56" y="112" font-size="34" class="i b">mello</text>
+<text x="174" y="112" font-size="12" class="o">● full stack engineer</text>
+<text x="56" y="148" font-size="10" class="d">BASE</text>
+<text x="126" y="148" font-size="13" class="i">são paulo, br</text>
+<text x="56" y="170" font-size="10" class="d">LANGS</text>
+<text x="126" y="170" font-size="13" class="i">rust · typescript · lua · zig</text>
+<text x="56" y="192" font-size="10" class="d">EDITOR</text>
+<text x="126" y="192" font-size="13" class="i">emacs + tmux</text>
+<text x="56" y="214" font-size="10" class="d">SINCE</text>
+<text x="126" y="214" font-size="13" class="i">2018</text>
+<text x="56" y="236" font-size="10" class="d">NOW</text>
+<text x="126" y="236" font-size="13" class="i">audio tools in rust</text>
+</g>
+<g class="pg1">
+<rect x="56" y="83" width="14" height="14" rx="3" fill="#ff5b14"/>
+<text x="80" y="94" font-size="13" class="i b">riff</text>
+<text x="80" y="107" font-size="10" class="d">metal amp, cab and pedal sim, vst3 + clap</text>
+<text x="480" y="94" font-size="10" text-anchor="end" class="o">rust</text>
+<rect x="56" y="112" width="14" height="14" rx="3" fill="#ff5b14"/>
+<text x="80" y="123" font-size="13" class="i b">broll</text>
+<text x="80" y="136" font-size="10" class="d">terminal recorder, searchable history</text>
+<text x="480" y="123" font-size="10" text-anchor="end" class="o">rust</text>
+<rect x="56" y="141" width="14" height="14" rx="3" fill="#2f6bd8"/>
+<text x="80" y="152" font-size="13" class="i b">flip</text>
+<text x="80" y="165" font-size="10" class="d">pad sampler and synth groovebox</text>
+<text x="480" y="152" font-size="10" text-anchor="end" class="o">rust</text>
+<rect x="56" y="170" width="14" height="14" rx="3" fill="#2fa35a"/>
+<text x="80" y="181" font-size="13" class="i b">steam-achiever</text>
+<text x="80" y="194" font-size="10" class="d">easiest achievements in your library</text>
+<text x="480" y="181" font-size="10" text-anchor="end" class="o">ts</text>
+<rect x="56" y="199" width="14" height="14" rx="3" fill="#f4f3ef"/>
+<text x="80" y="210" font-size="13" class="i b">nvim-config</text>
+<text x="80" y="223" font-size="10" class="d">neovim + one-shot arch installer</text>
+<text x="480" y="210" font-size="10" text-anchor="end" class="o">lua</text>
+<rect x="56" y="228" width="14" height="14" rx="3" fill="#6a6b6c"/>
+<text x="80" y="239" font-size="13" class="i b">rewrites</text>
+<text x="80" y="252" font-size="10" class="d">classic unix tools, rewritten</text>
+<text x="480" y="239" font-size="10" text-anchor="end" class="o">rust</text>
+</g>
+<g class="pg2">
+<text x="56" y="98" font-size="10" class="d">FIND ME</text>
+<text x="56" y="120" font-size="12" class="o">▸</text>
+<text x="72" y="120" font-size="12" class="i">linkedin</text>
+<text x="166" y="120" font-size="12" class="d">in/rdemellob</text>
+<text x="56" y="142" font-size="12" class="o">▸</text>
+<text x="72" y="142" font-size="12" class="i">codewars</text>
+<text x="166" y="142" font-size="12" class="d">mellozin</text>
+<text x="56" y="164" font-size="12" class="o">▸</text>
+<text x="72" y="164" font-size="12" class="i">steam</text>
+<text x="166" y="164" font-size="12" class="d">poowoo</text>
+<text x="56" y="186" font-size="12" class="o">▸</text>
+<text x="72" y="186" font-size="12" class="i">retroach</text>
+<text x="166" y="186" font-size="12" class="d">mellorb1</text>
+<text x="306" y="98" font-size="10" class="d">INTERESTS</text>
+<text x="306" y="120" font-size="12" class="o">▸</text>
+<text x="322" y="120" font-size="12" class="i">cars</text>
+<text x="306" y="142" font-size="12" class="o">▸</text>
+<text x="322" y="142" font-size="12" class="i">retro gaming</text>
+<text x="306" y="164" font-size="12" class="o">▸</text>
+<text x="322" y="164" font-size="12" class="i">metal guitar</text>
+<text x="306" y="186" font-size="12" class="o">▸</text>
+<text x="322" y="186" font-size="12" class="i">system crafting</text>
+<text x="306" y="208" font-size="12" class="o">▸</text>
+<text x="322" y="208" font-size="12" class="i">lisps</text>
+</g>
+<rect x="56" y="272" width="11" height="11" rx="2" fill="#ff5b14"/>
+<rect x="71" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="86" y="272" width="11" height="11" rx="2" fill="#6a6b6c"/>
+<rect x="101" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="116" y="272" width="11" height="11" rx="2" fill="#eceae4"/>
+<rect x="131" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="146" y="272" width="11" height="11" rx="2" fill="#ff5b14"/>
+<rect x="161" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="176" y="272" width="11" height="11" rx="2" fill="#6a6b6c"/>
+<rect x="191" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="206" y="272" width="11" height="11" rx="2" fill="#ff5b14"/>
+<rect x="221" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="236" y="272" width="11" height="11" rx="2" fill="#eceae4"/>
+<rect x="251" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<rect x="266" y="272" width="11" height="11" rx="2" fill="#6a6b6c"/>
+<rect x="281" y="272" width="11" height="11" rx="2" fill="#222325"/>
+<g class="head"><rect x="54" y="269" width="15" height="17" rx="3" fill="none" stroke="#eceae4" stroke-width="1.2"/></g>
+<text x="496" y="282" font-size="10" text-anchor="end" class="d">github.com/rodbove<tspan class="o blink"> _</tspan></text>
+<rect x="40" y="40" width="470" height="262" rx="6" fill="url(#glass)"/>
+<circle cx="570" cy="64" r="19" fill="#5e5f5b"/>
+<circle cx="570" cy="62" r="19" fill="#2f6bd8"/>
+<circle cx="570" cy="62" r="19" fill="url(#knob)"/>
+<g transform="rotate(-40 570 62)"><rect x="568.5" y="45" width="3" height="9" rx="1.5" fill="#f4f3ef"/></g>
+<text x="570" y="96" text-anchor="middle" class="lbl">CODE</text>
+<circle cx="628" cy="64" r="19" fill="#5e5f5b"/>
+<circle cx="628" cy="62" r="19" fill="#2fa35a"/>
+<circle cx="628" cy="62" r="19" fill="url(#knob)"/>
+<g transform="rotate(70 628 62)"><rect x="626.5" y="45" width="3" height="9" rx="1.5" fill="#f4f3ef"/></g>
+<text x="628" y="96" text-anchor="middle" class="lbl">COFFEE</text>
+<circle cx="686" cy="64" r="19" fill="#5e5f5b"/>
+<circle cx="686" cy="62" r="19" fill="#f4f3ef"/>
+<circle cx="686" cy="62" r="19" fill="url(#knob)"/>
+<g transform="rotate(20 686 62)"><rect x="684.5" y="45" width="3" height="9" rx="1.5" fill="#1c1c1c"/></g>
+<text x="686" y="96" text-anchor="middle" class="lbl">MUSIC</text>
+<circle cx="744" cy="64" r="19" fill="#5e5f5b"/>
+<circle cx="744" cy="62" r="19" fill="#ff5b14"/>
+<circle cx="744" cy="62" r="19" fill="url(#knob)"/>
+<g transform="rotate(130 744 62)"><rect x="742.5" y="45" width="3" height="9" rx="1.5" fill="#f4f3ef"/></g>
+<text x="744" y="96" text-anchor="middle" class="lbl">GAMES</text>
+<rect x="548" y="121" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="548" y="118" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p0 { 0% { opacity: 0; } 0.000% { opacity: 0.85; } 5.625% { opacity: 0; } 37.500% { opacity: 0.85; } 43.125% { opacity: 0; } 62.500% { opacity: 0.85; } 68.125% { opacity: 0; } 100% { opacity: 0; } } .p0 { animation: p0 2.0s step-end infinite; }</style>
+<rect class="p0" x="548" y="118" width="50" height="50" rx="8" fill="#ff5b14" opacity="0"/>
+<rect x="555" y="126" width="8" height="8" rx="2" fill="#ff5b14" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="567" y="133" font-size="7" fill="#454642">A1</text>
+<text x="555" y="160" font-size="10" fill="#1c1c1c" class="b">broll</text>
+<rect x="606" y="121" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="606" y="118" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p1 { 0% { opacity: 0; } 12.500% { opacity: 0.85; } 18.125% { opacity: 0; } 87.500% { opacity: 0.85; } 93.125% { opacity: 0; } 100% { opacity: 0; } } .p1 { animation: p1 2.0s step-end infinite; }</style>
+<rect class="p1" x="606" y="118" width="50" height="50" rx="8" fill="#ff5b14" opacity="0"/>
+<rect x="613" y="126" width="8" height="8" rx="2" fill="#ff5b14" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="625" y="133" font-size="7" fill="#454642">A2</text>
+<text x="613" y="160" font-size="10" fill="#1c1c1c" class="b">riff</text>
+<rect x="664" y="121" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="664" y="118" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p2 { 0% { opacity: 0; } 50.000% { opacity: 0.85; } 55.625% { opacity: 0; } 100% { opacity: 0; } } .p2 { animation: p2 2.0s step-end infinite; }</style>
+<rect class="p2" x="664" y="118" width="50" height="50" rx="8" fill="#ff5b14" opacity="0"/>
+<rect x="671" y="126" width="8" height="8" rx="2" fill="#ff5b14" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="683" y="133" font-size="7" fill="#454642">A3</text>
+<text x="671" y="160" font-size="10" fill="#1c1c1c" class="b">flip</text>
+<rect x="722" y="121" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="722" y="118" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p3 { 0% { opacity: 0; } 18.750% { opacity: 0.85; } 24.375% { opacity: 0; } 68.750% { opacity: 0.85; } 74.375% { opacity: 0; } 100% { opacity: 0; } } .p3 { animation: p3 2.0s step-end infinite; }</style>
+<rect class="p3" x="722" y="118" width="50" height="50" rx="8" fill="#ff5b14" opacity="0"/>
+<rect x="729" y="126" width="8" height="8" rx="2" fill="#ff5b14" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="741" y="133" font-size="7" fill="#454642">A4</text>
+<text x="729" y="160" font-size="10" fill="#1c1c1c" class="b">steam</text>
+<rect x="548" y="179" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="548" y="176" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p4 { 0% { opacity: 0; } 25.000% { opacity: 0.85; } 30.625% { opacity: 0; } 75.000% { opacity: 0.85; } 80.625% { opacity: 0; } 100% { opacity: 0; } } .p4 { animation: p4 2.0s step-end infinite; }</style>
+<rect class="p4" x="548" y="176" width="50" height="50" rx="8" fill="#2f6bd8" opacity="0"/>
+<rect x="555" y="184" width="8" height="8" rx="2" fill="#2f6bd8" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="567" y="191" font-size="7" fill="#454642">B1</text>
+<text x="555" y="218" font-size="10" fill="#1c1c1c" class="b">rust</text>
+<rect x="606" y="179" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="606" y="176" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p5 { 0% { opacity: 0; } 43.750% { opacity: 0.85; } 49.375% { opacity: 0; } 93.750% { opacity: 0.85; } 99.375% { opacity: 0; } 100% { opacity: 0; } } .p5 { animation: p5 2.0s step-end infinite; }</style>
+<rect class="p5" x="606" y="176" width="50" height="50" rx="8" fill="#2f6bd8" opacity="0"/>
+<rect x="613" y="184" width="8" height="8" rx="2" fill="#2f6bd8" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="625" y="191" font-size="7" fill="#454642">B2</text>
+<text x="613" y="218" font-size="10" fill="#1c1c1c" class="b">ts</text>
+<rect x="664" y="179" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="664" y="176" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p6 { 0% { opacity: 0; } 31.250% { opacity: 0.85; } 36.875% { opacity: 0; } 100% { opacity: 0; } } .p6 { animation: p6 2.0s step-end infinite; }</style>
+<rect class="p6" x="664" y="176" width="50" height="50" rx="8" fill="#2f6bd8" opacity="0"/>
+<rect x="671" y="184" width="8" height="8" rx="2" fill="#2f6bd8" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="683" y="191" font-size="7" fill="#454642">B3</text>
+<text x="671" y="218" font-size="10" fill="#1c1c1c" class="b">lua</text>
+<rect x="722" y="179" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="722" y="176" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p7 { 0% { opacity: 0; } 81.250% { opacity: 0.85; } 86.875% { opacity: 0; } 100% { opacity: 0; } } .p7 { animation: p7 2.0s step-end infinite; }</style>
+<rect class="p7" x="722" y="176" width="50" height="50" rx="8" fill="#2f6bd8" opacity="0"/>
+<rect x="729" y="184" width="8" height="8" rx="2" fill="#2f6bd8" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="741" y="191" font-size="7" fill="#454642">B4</text>
+<text x="729" y="218" font-size="10" fill="#1c1c1c" class="b">zig</text>
+<rect x="548" y="237" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="548" y="234" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p8 { 0% { opacity: 0; } 0.000% { opacity: 0.85; } 5.625% { opacity: 0; } 12.500% { opacity: 0.85; } 18.125% { opacity: 0; } 25.000% { opacity: 0.85; } 30.625% { opacity: 0; } 37.500% { opacity: 0.85; } 43.125% { opacity: 0; } 50.000% { opacity: 0.85; } 55.625% { opacity: 0; } 62.500% { opacity: 0.85; } 68.125% { opacity: 0; } 75.000% { opacity: 0.85; } 80.625% { opacity: 0; } 87.500% { opacity: 0.85; } 93.125% { opacity: 0; } 100% { opacity: 0; } } .p8 { animation: p8 2.0s step-end infinite; }</style>
+<rect class="p8" x="548" y="234" width="50" height="50" rx="8" fill="#2fa35a" opacity="0"/>
+<rect x="555" y="242" width="8" height="8" rx="2" fill="#2fa35a" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="567" y="249" font-size="7" fill="#454642">C1</text>
+<text x="555" y="276" font-size="10" fill="#1c1c1c" class="b">emacs</text>
+<rect x="606" y="237" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="606" y="234" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p9 { 0% { opacity: 0; } 56.250% { opacity: 0.85; } 61.875% { opacity: 0; } 100% { opacity: 0; } } .p9 { animation: p9 2.0s step-end infinite; }</style>
+<rect class="p9" x="606" y="234" width="50" height="50" rx="8" fill="#2fa35a" opacity="0"/>
+<rect x="613" y="242" width="8" height="8" rx="2" fill="#2fa35a" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="625" y="249" font-size="7" fill="#454642">C2</text>
+<text x="613" y="276" font-size="10" fill="#1c1c1c" class="b">tmux</text>
+<rect x="664" y="237" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="664" y="234" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p10 { 0% { opacity: 0; } 6.250% { opacity: 0.85; } 11.875% { opacity: 0; } 100% { opacity: 0; } } .p10 { animation: p10 2.0s step-end infinite; }</style>
+<rect class="p10" x="664" y="234" width="50" height="50" rx="8" fill="#2fa35a" opacity="0"/>
+<rect x="671" y="242" width="8" height="8" rx="2" fill="#2fa35a" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="683" y="249" font-size="7" fill="#454642">C3</text>
+<text x="671" y="276" font-size="10" fill="#1c1c1c" class="b">nvim</text>
+<rect x="722" y="237" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="722" y="234" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p11 { 0% { opacity: 0; } 37.500% { opacity: 0.85; } 43.125% { opacity: 0; } 100% { opacity: 0; } } .p11 { animation: p11 2.0s step-end infinite; }</style>
+<rect class="p11" x="722" y="234" width="50" height="50" rx="8" fill="#2fa35a" opacity="0"/>
+<rect x="729" y="242" width="8" height="8" rx="2" fill="#2fa35a" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="741" y="249" font-size="7" fill="#454642">C4</text>
+<text x="729" y="276" font-size="10" fill="#1c1c1c" class="b">sqlite</text>
+<rect x="548" y="295" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="548" y="292" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p12 { 0% { opacity: 0; } 0.000% { opacity: 0.85; } 5.625% { opacity: 0; } 100% { opacity: 0; } } .p12 { animation: p12 2.0s step-end infinite; }</style>
+<rect class="p12" x="548" y="292" width="50" height="50" rx="8" fill="#f4f3ef" opacity="0"/>
+<rect x="555" y="300" width="8" height="8" rx="2" fill="#f4f3ef" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="567" y="307" font-size="7" fill="#454642">D1</text>
+<text x="555" y="334" font-size="10" fill="#1c1c1c" class="b">cars</text>
+<rect x="606" y="295" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="606" y="292" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p13 { 0% { opacity: 0; } 62.500% { opacity: 0.85; } 68.125% { opacity: 0; } 100% { opacity: 0; } } .p13 { animation: p13 2.0s step-end infinite; }</style>
+<rect class="p13" x="606" y="292" width="50" height="50" rx="8" fill="#f4f3ef" opacity="0"/>
+<rect x="613" y="300" width="8" height="8" rx="2" fill="#f4f3ef" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="625" y="307" font-size="7" fill="#454642">D2</text>
+<text x="613" y="334" font-size="10" fill="#1c1c1c" class="b">retro</text>
+<rect x="664" y="295" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="664" y="292" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p14 { 0% { opacity: 0; } 25.000% { opacity: 0.85; } 30.625% { opacity: 0; } 100% { opacity: 0; } } .p14 { animation: p14 2.0s step-end infinite; }</style>
+<rect class="p14" x="664" y="292" width="50" height="50" rx="8" fill="#f4f3ef" opacity="0"/>
+<rect x="671" y="300" width="8" height="8" rx="2" fill="#f4f3ef" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="683" y="307" font-size="7" fill="#454642">D3</text>
+<text x="671" y="334" font-size="10" fill="#1c1c1c" class="b">guitar</text>
+<rect x="722" y="295" width="50" height="50" rx="8" fill="#5e5f5b"/>
+<rect x="722" y="292" width="50" height="50" rx="8" fill="#ddddd7"/>
+<style>@keyframes p15 { 0% { opacity: 0; } 75.000% { opacity: 0.85; } 80.625% { opacity: 0; } 100% { opacity: 0; } } .p15 { animation: p15 2.0s step-end infinite; }</style>
+<rect class="p15" x="722" y="292" width="50" height="50" rx="8" fill="#f4f3ef" opacity="0"/>
+<rect x="729" y="300" width="8" height="8" rx="2" fill="#f4f3ef" stroke="#5e5f5b" stroke-width="0.6"/>
+<text x="741" y="307" font-size="7" fill="#454642">D4</text>
+<text x="729" y="334" font-size="10" fill="#1c1c1c" class="b">lisp</text>
+<circle cx="48.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="57.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="66.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="75.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="84.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="93.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="102.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="111.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="120.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="129.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="138.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="147.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="156.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="165.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="174.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="183.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="192.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="201.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="210.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="219.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="228.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="237.0" cy="330" r="2.4" fill="#555652"/>
+<circle cx="52.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="61.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="70.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="79.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="88.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="97.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="106.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="115.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="124.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="133.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="142.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="151.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="160.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="169.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="178.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="187.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="196.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="205.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="214.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="223.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="232.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="241.5" cy="339" r="2.4" fill="#555652"/>
+<circle cx="48.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="57.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="66.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="75.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="84.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="93.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="102.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="111.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="120.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="129.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="138.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="147.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="156.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="165.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="174.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="183.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="192.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="201.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="210.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="219.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="228.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="237.0" cy="348" r="2.4" fill="#555652"/>
+<circle cx="52.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="61.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="70.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="79.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="88.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="97.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="106.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="115.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="124.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="133.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="142.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="151.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="160.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="169.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="178.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="187.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="196.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="205.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="214.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="223.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="232.5" cy="357" r="2.4" fill="#555652"/>
+<circle cx="241.5" cy="357" r="2.4" fill="#555652"/>
+<text x="250" y="342" font-size="22" fill="#1c1c1c" class="b">mello</text>
+<text x="542" y="146.0" font-size="7" text-anchor="end" transform="rotate(-90 542 146.0)" class="lbl">BUILD</text>
+<text x="542" y="204.0" font-size="7" text-anchor="end" transform="rotate(-90 542 204.0)" class="lbl">LANG</text>
+<text x="542" y="262.0" font-size="7" text-anchor="end" transform="rotate(-90 542 262.0)" class="lbl">TOOL</text>
+<text x="542" y="320.0" font-size="7" text-anchor="end" transform="rotate(-90 542 320.0)" class="lbl">LIKE</text>
+<text x="250" y="360" font-size="9" class="lbl">FULL STACK ENGINEER</text>
+<rect x="420" y="329" width="28" height="28" rx="6" fill="#0f0f0f"/>
+<rect x="420" y="326" width="28" height="28" rx="6" fill="#2a2a2a"/>
+<path d="M431 333 l9 7 l-9 7 z" fill="#2fa35a"/>
+<text x="434" y="368" font-size="7" text-anchor="middle" class="lbl">PLAY</text>
+<rect x="454" y="329" width="28" height="28" rx="6" fill="#0f0f0f"/>
+<rect x="454" y="326" width="28" height="28" rx="6" fill="#2a2a2a"/>
+<circle cx="468" cy="340" r="5" fill="#ff5b14"/>
+<text x="468" y="368" font-size="7" text-anchor="middle" class="lbl">REC</text>
+<rect x="488" y="329" width="28" height="28" rx="6" fill="#0f0f0f"/>
+<rect x="488" y="326" width="28" height="28" rx="6" fill="#2a2a2a"/>
+<text x="502" y="343" font-size="8" text-anchor="middle" fill="#e6e4de">SHIFT</text>
+<text x="502" y="368" font-size="7" text-anchor="middle" class="lbl">SHIFT</text>
+</svg>
