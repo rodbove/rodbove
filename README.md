@@ -5,7 +5,7 @@
 <br/>
 
 <div align="center">
-  <img src="stats.svg?v=202611071311" alt="mello's stats" width="800" />
+  <img src="stats.svg?v=202611081333" alt="mello's stats" width="800" />
 </div>
 
 <br/>
