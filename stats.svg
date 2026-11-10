@@ -24,8 +24,8 @@ text { font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mo
 <rect x="143" y="19" width="314" height="70" rx="9" fill="#2a2a2a"/>
 <rect x="150" y="26" width="300" height="56" rx="4" fill="#0d0e0f"/>
 <text x="162" y="44" font-size="9" class="o b">PRESET RUST</text>
-<text x="438" y="44" font-size="9" text-anchor="end" class="d">STREAK 0D  BEST 11D</text>
-<text x="162" y="71" font-size="22" class="i b">490</text>
+<text x="438" y="44" font-size="9" text-anchor="end" class="d">STREAK 1D  BEST 11D</text>
+<text x="162" y="71" font-size="22" class="i b">487</text>
 <text x="210" y="71" font-size="10" class="d">contributions in the last year<tspan class="o blink"> _</tspan></text>
 <rect x="150" y="26" width="300" height="56" rx="4" fill="url(#glass)"/>
 <text x="480" y="46" font-size="20" fill="#1c1c1c" class="b">mello</text>
@@ -90,7 +90,7 @@ text { font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mo
 <rect x="602.4" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>8 contributions</title></rect>
 <rect x="602.4" y="168.6" width="28.8" height="56.4" rx="3" fill="#ffd2bd"/>
 <rect class="press" style="animation-delay: 6.50s" x="602.4" y="96" width="28.8" height="132" rx="3" fill="#ff5b14"/>
-<rect x="633.2" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>8 contributions</title></rect>
+<rect x="633.2" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>2 contributions</title></rect>
 <rect x="633.2" y="168.6" width="28.8" height="56.4" rx="3" fill="#ffd2bd"/>
 <rect class="press" style="animation-delay: 7.00s" x="633.2" y="96" width="28.8" height="132" rx="3" fill="#ff5b14"/>
 <rect x="664.0" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>3 contributions</title></rect>
@@ -101,7 +101,8 @@ text { font-family: "SF Mono", "Cascadia Code", Menlo, Consolas, "DejaVu Sans Mo
 <rect x="725.5" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>38 contributions</title></rect>
 <rect x="725.5" y="168.6" width="28.8" height="56.4" rx="3" fill="#ff5b14"/>
 <rect class="press" style="animation-delay: 8.25s" x="725.5" y="96" width="28.8" height="132" rx="3" fill="#ff5b14"/>
-<rect x="756.2" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>0 contributions</title></rect>
+<rect x="756.2" y="96" width="28.8" height="132" rx="3" fill="url(#ivory)"><title>3 contributions</title></rect>
+<rect x="756.2" y="168.6" width="28.8" height="56.4" rx="3" fill="#ffd2bd"/>
 <rect class="press" style="animation-delay: 8.75s" x="756.2" y="96" width="28.8" height="132" rx="3" fill="#ff5b14"/>
 <rect x="161.5" y="96" width="18.5" height="85" rx="3" fill="#0f0f0f"/>
 <rect x="161.5" y="96" width="18.5" height="82" rx="3" fill="url(#ebony)"><title>137 contributions</title></rect>
